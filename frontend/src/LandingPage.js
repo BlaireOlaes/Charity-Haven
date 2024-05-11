@@ -42,7 +42,7 @@ function LandingPage() {
                                 Empowering<br />
                                 <span><strong>HUMANITY</strong></span>,<br />
                                 one act of kindness
-                                at a time<br />
+                                at a time.<br />
                             </h1>
                             <button><a href="/contact">Contact</a>
                             </button>

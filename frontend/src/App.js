@@ -15,8 +15,6 @@ import LandingPageCopy from './screens/LandingPageCopy';
 
 // import Admin from './screens/Admin';
 
-// import Admin from './screens/Admin';
-
 
 
 

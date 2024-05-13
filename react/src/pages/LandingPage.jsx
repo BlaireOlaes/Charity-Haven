@@ -6,6 +6,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function LandingPage() {
     const navigate = useNavigate();
@@ -74,39 +76,27 @@ function LandingPage() {
     };
 
     return (
-        <div>
-            <ToastContainer />
-            {/* <HelmetProvider>
-                <Helmet> */}
-            <title>Charity Haven</title>
-            {/* </Helmet>
-            </HelmetProvider> */}
+        <div className="wrapper">
             <div className="main-container">
-                <div className="topbar">
-                    <div className="logo-section">CHARITY HAVEN</div>
-                    <div className="topbar-section">
-                        <div className="sub-section">
-                            <a href="/contact">DONATE</a>
-                        </div>
-                        <div className="login-section">
-                            <div className="sub-section">
-                                <a href="/signin">SIGN UP</a>
-                            </div>
-                            <div className="sub-section">
-                                <a href="/login">LOGIN</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {/* <div className="cover-page background-image"> */}
+            <ToastContainer />
+            <title>Charity Haven</title>
+                <nav className="landing-nav">
+                    <h4 className="my-logo">CHARITY HAVEN</h4>
+                            <ul className="nav-list">
+                                <li><a href="/contact">DONATE</a></li>
+                                <li><a href="/signin">SIGN UP</a></li>
+                                <li><a href="/login">LOGIN</a></li>
+                            </ul>
+                </nav>
+
                 <div className="cover-page">
                     <div className="content-section"></div>
                     <div className="container">
                         <div className="header">
                             <div className="buttons">
-                                <h1>Create Account</h1>
-                                <form onSubmit={handleSubmit}>
-                                    <div className="mb-3" {...getRootProps()}>
+                                <h1 className="create">Create Account</h1>
+                                <form onSubmit={handleSubmit} className="login-form">
+                                    <div className="mb-3 drag" {...getRootProps()}>
                                         <input {...getInputProps()} />
                                         {profilePic ? (
                                             <img
@@ -219,13 +209,11 @@ function LandingPage() {
                                         Submit
                                     </button>
                                 </form>
-                                {/* <button><a href="/contact">Contact</a></button> */}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {/* </div> */}
         </div>
     );
 }

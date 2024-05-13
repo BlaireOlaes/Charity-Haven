@@ -39,11 +39,13 @@ function Login() {
         }
     };
     return (
+        <div className="login-wrapper">
         <div className="container">
             <ToastContainer />
+
             <div className="header">
                 <div className="buttons">
-                    <h1>Login to Charity Haven</h1>
+                <h1 className="title">Login to Charity Haven</h1>
                     <p>Login in today to see new donations.</p>
                     <div className="line-container">
                         <div className="line"></div>
@@ -69,10 +71,12 @@ function Login() {
                     </div>
                 </div>
                 <div className="main-content">
-                    <div className="signup">
+                    <div className="login">
+                    <hr className="left" />
                         <h2>or</h2>
+                        <hr className="right" />
                     </div>
-                    <div className="mb-3">
+                    <div className="mb-3 email2">
                         <label
                             htmlFor="exampleFormControlInput1"
                             className="form-label"
@@ -90,7 +94,7 @@ function Login() {
                             required
                         />
                     </div>
-                    <div className="mb-3 row">
+                    <div className="mb-3 password">
                         <label
                             htmlFor="inputPassword"
                             className="col-sm-2 col-form-label"
@@ -108,11 +112,11 @@ function Login() {
                                 required
                             />
                         </div>
-                    </div>
-                    <button className="login-button" onClick={handleLogin}>
+                        <button className="login-button" onClick={handleLogin}>
                         Login
                     </button>
-                    <div className="line2"></div>
+                    </div>
+                    <hr />
                     <p className="myCustomClass">
                         Don't have an account?{" "}
                         <a href="/signin">Sign Up here.</a>
@@ -120,6 +124,8 @@ function Login() {
                 </div>
             </div>
         </div>
+        </div>
+
     );
 }
 

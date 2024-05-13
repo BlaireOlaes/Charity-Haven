@@ -4,10 +4,10 @@ import axios from "../api/axios";
 
 function SignIn() {
     return (
-        <div className="container">
+        <div className="signin-wrapper">
             <div className="header">
                 <div className="buttons">
-                    <h1>Sign in to Charity Haven</h1>
+                    <h1 className="title">Sign in to Charity Haven</h1>
                     <p>
                         Happening now.
                         <br />
@@ -39,13 +39,14 @@ function SignIn() {
 
                 <div className="main-content">
                     <div className="signin">
+                        <hr className="left" />
                         <h2>or</h2>
+                        <hr className="right" />
                     </div>
-                    <div className="mb-3">
+                    <div className="mb-3 email">
                         <label
                             htmlFor="exampleFormControlInput1"
-                            className="form-label"
-                        >
+                            className="form-label">
                             Email address
                         </label>
                         <input
@@ -54,9 +55,9 @@ function SignIn() {
                             id="exampleFormControlInput1"
                             placeholder="name@example.com"
                         />
+                    <button className="login-btn">Sign up</button>
+                    <hr />
                     </div>
-                    <button className="login-button">Sign up</button>
-                    <div className="line2"></div>
                     <p>
                         Don't have an account? <a href="/login">Login here.</a>
                     </p>

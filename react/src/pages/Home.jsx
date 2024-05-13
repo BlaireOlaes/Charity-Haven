@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "../api/axios";
 import { Modal, Button, Form } from "react-bootstrap";
 import { useDropzone } from "react-dropzone";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { FaUser, FaCog, FaBell, FaAddressBook,FaHeart, FaUserFriends, FaShareAlt, FaQrcode, FaMoneyBillAlt} from 'react-icons/fa';
 
 function Home() {
     const [posts, setPosts] = useState([]);
@@ -61,7 +63,7 @@ function Home() {
     }, []);
 
     return (
-        <div className="container">
+        <div className="modal-container">
             <Modal show={show} onHide={handleClose}>
                 <Modal.Title>Post Charity</Modal.Title>
 
@@ -131,51 +133,111 @@ function Home() {
                 </Modal.Footer>
             </Modal>
 
-            <title>Charity Haven</title>
-            <header>
-                <header className="container">
-                    <nav>
-                        <ul>
-                            <li>
-                                <Link to="/">Contacts</Link>
-                            </li>
-                            <li>
-                                <Link to="/">Notifications</Link>
-                            </li>
-                            <li>
-                                <Link to="/">Settings</Link>
-                            </li>
-                            <li>
-                                <Link to="/">Profile</Link>
-                            </li>
-
-                            <li>
-                                <Button variant="primary" onClick={handleShow}>
-                                    POST CHARITY
-                                </Button>
-                            </li>
-                        </ul>
-                    </nav>
+            {/* <title>Charity Haven</title> */}
+        <div className="home-wrapper">
+            <div className="newsfeed">
+                <header>
+                    <div className="main-container1">
+                            <nav>
+                            <h3 className="my-logo">CHARITY HAVEN</h3>
+                                <ul>
+                                    <li className="uno">
+                                        <Link to="/contacts">
+                                            <FaAddressBook /> Contacts
+                                        </Link>
+                                    </li>
+                                    <li className="two">
+                                        <Link to="/notifications">
+                                            <FaBell /> Notifications
+                                        </Link>
+                                    </li>
+                                    <li className="three">
+                                        <Link to="/settings">
+                                            <FaCog /> Settings
+                                        </Link>
+                                    </li>
+                                    <li className="four">
+                                        <Link to="/profile">
+                                            <FaUser /> Profile
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </nav>
+                    </div>                
+           
                 </header>
-            </header>
-            <section>
-                {posts.map((post) => (
-                    <div key={post.id}>
-                        <h2>{post.postname}</h2>
-                        <h3>{post.description}</h3>
-                        <p>{post.username}</p>
-                        <p>{post.reacts}</p>
-                        <p>{post.comments}</p>
-                        <p>{post.contacts}</p>
-                        <p>{post.share}</p>
-                        <p>{new Date(post.upload_time).toLocaleString()}</p>
-                        <img src={post.image} alt={post.postname} />
-                        <img src={post.qrcode} alt="QR Code" />
-                        <p>{post.gcash}</p>
-                    </div>
-                ))}
+            </div>
+            <section className="newsfeed-content">  
+            <div className="description-post-content">
+                    <h5>Click Post Charity to post new file:</h5>
+                    <Button
+                        variant="primary"
+                        onClick={handleShow}
+                        className="post-charity-button"
+                    >
+                        POST CHARITY
+                    </Button>
+                    <hr />
+                </div>   
+                <div className="posts-container">
+                    {posts.map((post) => (
+                        <div key={post.id} className="post">
+                            <div className="user">
+                            <h4 className="name">{post.postname}</h4>
+                            <p className="username">{post.username}</p>
+                            <p>
+                                <span>{new Date(post.upload_time).toLocaleString()}</span>
+                            </p>
+                            </div>
+                            <div className="post-wrapper">
+                            <div className="userpost-container">
+                            <h5>{post.description}</h5>
+                            <img src={post.image} alt={post.postname} />
+                            </div>
+                            </div>
+
+                            <hr className="one" />
+
+                            <div className="heart-container">
+                            <FaHeart className="heartsym" /><p className="heart">{post.reacts}</p>
+                            </div>
+                            <div className="comment-container">
+                            <FaHeart className="commentsym" /><p className="comment">{post.reacts}</p>
+                            </div>
+                            <div className="contact-container">
+                            <div>
+                            <FaUserFriends className="contactsym" />
+                            </div>
+                            <p className="contact2">{post.contacts}</p> 
+                            </div>
+                            <div className="qr-container">
+                            <FaQrcode className="qrsym" /><p className="qr">{post.share}</p>
+                            <img src={post.qrcode} alt="QR Code" />  <p>{post.gcash}</p> 
+                            </div>
+                           
+                            <div className="share-container">
+                            <FaShareAlt className="sharesym" /><p className="share">{post.share}</p>
+                            </div>
+                            <div className="comment-wrapper">
+                                <p className="comment-content">{post.comments}</p>
+                            </div>
+                            {/* <FaMoneyBillAlt /> 
+                            <p>{post.gcash}</p>  */}
+                            {/* 
+                            <img src={post.qrcode} alt="QR Code" /> 
+                            <FaMoneyBillAlt /> 
+                            <p>{post.gcash}</p>   */}
+                      </div>
+            
+
+
+                        
+                    ))}
+                </div>
             </section>
         </div>
+        </div>
+
     );
 }
 

@@ -203,6 +203,10 @@ function Home() {
                                     <img
                                         src={previewSrc.preview}
                                         alt="Preview"
+<<<<<<< Updated upstream
+=======
+                                        style={{ maxWidth: "300px" }}
+>>>>>>> Stashed changes
                                     />
                                 ) : (
                                     <p>
@@ -220,6 +224,10 @@ function Home() {
                                     <img
                                         src={qrCodePreviewSrc.preview}
                                         alt="QR Code Preview"
+<<<<<<< Updated upstream
+=======
+                                        style={{ maxWidth: "300px" }}
+>>>>>>> Stashed changes
                                     />
                                 ) : (
                                     <p>
@@ -229,6 +237,10 @@ function Home() {
                                 )}
                             </div>
                         </Form.Group>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
                         <Modal.Footer>
                             <Button variant="secondary" onClick={handleClose}>
                                 Close
@@ -312,10 +324,22 @@ function Home() {
                                             <img
                                                 src={post.image}
                                                 alt={post.postname}
+<<<<<<< Updated upstream
                                             />
                                         </div>
                                     </div>
 
+=======
+                                                style={{
+                                                    maxWidth: "1500px",
+                                                    width: "100%",
+                                                    height: "auto",
+                                                    border: "1px solid rgba(0, 0, 0, 0.2)",
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
+>>>>>>> Stashed changes
                                     <hr className="one" />
 
                                     <div className="heart-container">
@@ -334,7 +358,11 @@ function Home() {
                                             {post.contacts}
                                         </p>
                                     </div>
+<<<<<<< Updated upstream
                                     <div className="qr-container">
+=======
+                                    {/* <div className="qr-container">
+>>>>>>> Stashed changes
                                         <FaQrcode className="qrsym" />
                                         <p className="qr">{post.share}</p>
                                         <img
@@ -342,7 +370,11 @@ function Home() {
                                             alt="QR Code"
                                         />{" "}
                                         <p>{post.gcash}</p>
+<<<<<<< Updated upstream
                                     </div>
+=======
+                                    </div> */}
+>>>>>>> Stashed changes
 
                                     <div className="share-container">
                                         <FaShareAlt className="sharesym" />

@@ -126,7 +126,11 @@ function PostManagement() {
                     <SidePanel />
                 </div>
                 <div className="col-md-9">
+<<<<<<< Updated upstream
                     <NavigationBar />
+=======
+                    <NavigationBar  />
+>>>>>>> Stashed changes
                     <ToastContainer />
                     <Form.Control
                         type="text"

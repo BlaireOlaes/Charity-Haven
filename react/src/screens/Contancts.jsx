@@ -3,20 +3,18 @@ import '../css/index.css';
 
 function Contact() {
     return (
-        <div className="container">
-            <div className="header">
-                <div className="buttons">
+        <div className="contact-wrapper">
+            <div className="contact-info">
                     <h1>Contact Informations</h1>
-                    <p>Contact us through</p>
-                    <div className="line-container">
-                        <div className="line"></div>
-                    </div>
-                    <p>Gcash number: 090000001</p>
-                    <p>Email: bjohaven@gmail.com</p>
-                    <p>Facebook: facebook.com/bjo</p>
+                    <hr className="left" />
+                            <p2>Contact us through:</p2>
+                            <hr className="right" />
+                 
+                    <h2>Gcash number: 090000001</h2>
+                    <h2>Email: bjohaven@gmail.com</h2>
+                    <h2>Facebook: facebook.com/bjo</h2>
                 </div>
-            </div>
-        </div>
+                </div>
     );
 }
 

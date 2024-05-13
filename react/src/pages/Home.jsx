@@ -196,39 +196,40 @@ function Home() {
                         </Form.Group>
 
                         <Form.Group>
-                            <Form.Label>Post Cover Image</Form.Label>
-                            <div className="mb-3" {...getRootProps()}>
-                                <input {...getInputProps()} />
-                                {previewSrc ? (
-                                    <img
-                                        src={previewSrc.preview}
-                                        alt="Preview"
-                                    />
-                                ) : (
-                                    <p>
-                                        Drag 'n' drop post cover image here, or
-                                        click to select an image
-                                    </p>
-                                )}
-                            </div>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>QR Code Image</Form.Label>
-                            <div className="mb-3" {...getQrCodeRootProps()}>
-                                <input {...getQrCodeInputProps()} />
-                                {qrCodePreviewSrc ? (
-                                    <img
-                                        src={qrCodePreviewSrc.preview}
-                                        alt="QR Code Preview"
-                                    />
-                                ) : (
-                                    <p>
-                                        Drag 'n' drop QR code image here, or
-                                        click to select an image
-                                    </p>
-                                )}
-                            </div>
-                        </Form.Group>
+                                <Form.Label>Post Cover Image</Form.Label>
+                                <div className="mb-3" {...getRootProps()} >
+                                    <input {...getInputProps()} />
+                                    {previewSrc ? (
+                                        <img
+                                            src={previewSrc.preview}
+                                            alt="Preview"  style={{ maxWidth: '300px' }}
+                                        />
+                                    ) : (
+                                        <p>
+                                            Drag 'n' drop post cover image here, or
+                                            click to select an image
+                                        </p>
+                                    )}
+                                </div>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Label>QR Code Image</Form.Label>
+                                <div className="mb-3" {...getQrCodeRootProps()} >
+                                    <input {...getQrCodeInputProps()} />
+                                    {qrCodePreviewSrc ? (
+                                        <img
+                                            src={qrCodePreviewSrc.preview}
+                                            alt="QR Code Preview"  style={{ maxWidth: '300px' }}
+                                        />
+                                    ) : (
+                                        <p>
+                                            Drag 'n' drop QR code image here, or
+                                            click to select an image
+                                        </p>
+                                    )}
+                                </div>
+                            </Form.Group>
+
                         <Modal.Footer>
                             <Button variant="secondary" onClick={handleClose}>
                                 Close
@@ -307,15 +308,20 @@ function Home() {
                                         </p>
                                     </div>
                                     <div className="post-wrapper">
-                                        <div className="userpost-container">
-                                            <h5>{post.description}</h5>
-                                            <img
-                                                src={post.image}
-                                                alt={post.postname}
-                                            />
+                                            <div className="userpost-container">
+                                                <h5>{post.description}</h5>
+                                                <img
+                                                    src={post.image}
+                                                    alt={post.postname}
+                                                    style={{
+                                                        maxWidth: '1500px',
+                                                        width: '100%',
+                                                        height: 'auto',
+                                                        border: '1px solid rgba(0, 0, 0, 0.2)',
+                                                    }}
+                                                />
+                                            </div>
                                         </div>
-                                    </div>
-
                                     <hr className="one" />
 
                                     <div className="heart-container">
@@ -334,7 +340,7 @@ function Home() {
                                             {post.contacts}
                                         </p>
                                     </div>
-                                    <div className="qr-container">
+                                    {/* <div className="qr-container">
                                         <FaQrcode className="qrsym" />
                                         <p className="qr">{post.share}</p>
                                         <img
@@ -342,7 +348,7 @@ function Home() {
                                             alt="QR Code"
                                         />{" "}
                                         <p>{post.gcash}</p>
-                                    </div>
+                                    </div> */}
 
                                     <div className="share-container">
                                         <FaShareAlt className="sharesym" />

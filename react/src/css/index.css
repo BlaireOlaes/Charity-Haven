@@ -10,13 +10,14 @@
 body {
   font-family: "Roboto", sans-serif;
   /* overflow: hidden; */
-  background: #00171E;
+  background: #00171E !important;
   /* background-size: cover; */
 }
 
+/* landing page css */
 .wrapper {
   font-family: "Roboto", sans-serif;
-  height: 120vh;
+  height: 100vh !important;
   background-color: #00171E;
 }
 
@@ -70,7 +71,7 @@ body {
   margin-top: 20px;
   font-size: 1.5rem;
   font-weight: 600;
-  padding-bottom: 30px;
+  padding-bottom: 5px;
 }
 
 .drag:hover {
@@ -307,6 +308,8 @@ h2 {
   margin-left: 50px;
 }
 
+
+/* Home css */
 .home-wrapper {
   font-family: "Roboto", sans-serif;
   height: 180vh;
@@ -389,6 +392,7 @@ h2 {
 }
 
 .userpost-container h5 {
+  padding-bottom: 30px;
   text-align: left;
 }
 
@@ -537,4 +541,18 @@ h2 {
 
 .comment-content {
   margin: 10px 0 0 10px;
+}
+
+
+/* contacts css */
+.contact-wrapper {
+  font-family: "Roboto", sans-serif;
+  /* height: 100vh !important; */
+  background-color: #00171E;
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
 }

@@ -8,12 +8,6 @@ import { useNavigate } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-<<<<<<< Updated upstream
-function LandingPage() {
-    const navigate = useNavigate();
-    const [profilePic, setProfilePic] = useState(null);
-
-=======
 // function LandingPage() {
 //     const navigate = useNavigate();
 //     const [profilePic, setProfilePic] = useState(null);
@@ -86,7 +80,6 @@ function LandingPage() {
 function LandingPage() {
     const navigate = useNavigate();
     const [profilePic, setProfilePic] = useState(null);
->>>>>>> Stashed changes
     const [user, setUser] = useState({
         username: "",
         firstname: "",
@@ -101,19 +94,11 @@ function LandingPage() {
             "image/png": [".png"],
         },
         onDrop: (acceptedFiles) => {
-<<<<<<< Updated upstream
-            setProfilePic(
-                Object.assign(acceptedFiles[0], {
-                    preview: URL.createObjectURL(acceptedFiles[0]),
-                })
-            );
-=======
             const file = acceptedFiles[0];
             setProfilePic({
                 file,
                 preview: URL.createObjectURL(file),
             });
->>>>>>> Stashed changes
         },
     });
 
@@ -127,18 +112,10 @@ function LandingPage() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-<<<<<<< Updated upstream
-
-        const formData = new FormData();
-        Object.keys(user).forEach((key) => formData.append(key, user[key]));
-        if (profilePic) {
-            formData.append("profile_pic", profilePic);
-=======
         const formData = new FormData();
         Object.keys(user).forEach((key) => formData.append(key, user[key]));
         if (profilePic) {
             formData.append("profile_pic", profilePic.file);
->>>>>>> Stashed changes
         }
 
         axios
@@ -172,8 +149,6 @@ function LandingPage() {
             <div className="main-container">
                 <ToastContainer />
                 <title>Charity Haven</title>
-<<<<<<< Updated upstream
-=======
 
                 {/* <div> */}
                 {/* <form onSubmit={handleSubmit}>
@@ -184,7 +159,6 @@ function LandingPage() {
 
                 {/* </div> */}
 
->>>>>>> Stashed changes
                 <nav className="landing-nav">
                     <h4 className="my-logo">CHARITY HAVEN</h4>
                     <ul className="nav-list">
@@ -216,12 +190,6 @@ function LandingPage() {
                                     >
                                         <input {...getInputProps()} />
                                         {profilePic ? (
-<<<<<<< Updated upstream
-                                            <img
-                                                src={profilePic.preview}
-                                                alt="Profile Preview"
-                                            />
-=======
                                             <div>
                                                 <img
                                                     src={profilePic.preview}
@@ -234,7 +202,6 @@ function LandingPage() {
                                                     }}
                                                 />
                                             </div>
->>>>>>> Stashed changes
                                         ) : (
                                             <p>
                                                 Drag 'n' drop profile picture
